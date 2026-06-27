@@ -149,7 +149,7 @@ if [ $t_c_h -eq 1 ] || [ $t_ifdefs -eq 1 ] || [ $t_exports -eq 1 ]; then
             echo "#include \"CLucene/StdHeader.h"\" >$TMP/pub-header.cpp
             echo "#include \"$H"\" >>$TMP/pub-header.cpp
             echo "int main(){ return 0; }" >>"$TMP/pub-header.cpp"
-            ERROR=`g++ -I. -I$TMP/src/shared -I./src/shared -I../src/ext -I$TMP/src/core $TMP/pub-header.cpp`
+            ERROR=`g++ -I. -I$TMP/src/shared -I./src/shared -I$TMP/src/core $TMP/pub-header.cpp`
             if [ $? -ne 0 ]; then 
               echo ""
             	echo "$H doesn't compile seperately..."
@@ -208,7 +208,7 @@ fi
 
 #test if headers can compile together by themselves:
 if [ $t_c_all -eq 1 ]; then
-    g++ -I$TMP/src -I../src/ext -I$TMP/src/shared -I$TMP/src/core $TMP/pub-headers.cpp -I./src/shared
+    g++ -I$TMP/src -I$TMP/src/shared -I$TMP/src/core $TMP/pub-headers.cpp -I./src/shared
 fi
 
 if [ $t_inline -eq 1 ]; then
