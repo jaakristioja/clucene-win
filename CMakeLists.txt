@@ -158,13 +158,7 @@ INCLUDE_DIRECTORIES( ${clucene_SOURCE_DIR}/src/shared )
 INCLUDE_DIRECTORIES( ${clucene_BINARY_DIR}/src/shared )
 INCLUDE_DIRECTORIES( ${clucene_SOURCE_DIR}/src/core )
 
-#set boost path. we need src/ext to be defined before this works...
-Include (CLuceneBoost)
-GET_BOOST_INCLUDE_PATH(_CL_BOOST_INCLUDE_PATH)
-INCLUDE_DIRECTORIES( ${_CL_BOOST_INCLUDE_PATH} )
-
 #include the projects
-ADD_SUBDIRECTORY (src/ext)
 ADD_SUBDIRECTORY (src/shared)
 ADD_SUBDIRECTORY (src/core)
 ADD_SUBDIRECTORY (src/test)
